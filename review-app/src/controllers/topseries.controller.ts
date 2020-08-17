@@ -1,16 +1,18 @@
 import { Request, Response } from 'express';
-import fetchSeriesDetailsById from '../services/rated.service';
+import * as service from '../services/rated.service';
 
-const getTopEpisodes = async (req: Request, res: Response) => {
+export const getTopEpisodes = async (req: Request, res: Response) => {
+  let response: any = {};
 try {
-  const getSeriesDetails = await fetchSeriesDetailsById(req.params.id, req.params.sid);
-  if(Object.keys(getSeriesDetails).length === 0){
-    res.status(200).send('No data Found');
-  }
-  res.status(200).send(getSeriesDetails);
+  const getSeriesDetails = await service.fetchSeriesDetailsById(req.params.id, req.params.sid);
+  response = Object.keys(getSeriesDetails).length === 0 ? {} : getSeriesDetails;
+  response.statusCode = 200;
 } catch (err) {
-  res.status(404).send(err);
+  response = err;
 }
+const code = response && response.statusCode ?
+    response.statusCode :
+    500;
+  delete response.statusCode;
+  res.status(code).send(response);
 };
-
-export default getTopEpisodes;
