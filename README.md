@@ -18,7 +18,7 @@
 
 You can check the api and call the Api from postman
 
-http://localhost:3000/api/topEpisodes/`${tvId}/${seasonId}`
+http://localhost:3000/api/topEpisodes/{tvId}/{seasonId}
   
   example http://localhost:3000/api/topEpisodes/210/1
   
