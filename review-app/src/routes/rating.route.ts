@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import  { getTopEpisodes }from '../controllers/topseries.controller'
+import  { getTopEpisodes }from '../controllers/series.controller'
 
 const router = Router();
 
