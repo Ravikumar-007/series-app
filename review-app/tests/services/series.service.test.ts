@@ -2,7 +2,7 @@ import { expect } from 'chai';
 import 'mocha';
 import sinon from 'sinon';
 
-import * as service from '../../src/services/rated.service';
+import * as service from '../../src/services/series.service';
 import * as helper from '../../src/helpers/api.helper';
 
 describe('Should check the Rated-Service with the method call fetchDetailsById', () => {

@@ -3,8 +3,8 @@ import 'mocha';
 import httpMocks from 'node-mocks-http';
 import sinon from 'sinon';
 
-import * as controller from '../../src/controllers/topseries.controller';
-import * as service from '../../src/services/rated.service';
+import * as controller from '../../src/controllers/series.controller';
+import * as service from '../../src/services/series.service';
 
 describe('Should check the Controller with the method call topSeries Controller', () => {
   let fetchServiceStub: any;
