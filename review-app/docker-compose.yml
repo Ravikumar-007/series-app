@@ -1,0 +1,19 @@
+version: '3'
+services:
+  api:
+    image: review-app
+    build: .
+    networks:
+      - backend
+    ports:
+      - "3000:3000"
+
+  web-cli:
+    image: review-app
+    networks:
+      - backend
+    command: sh
+
+networks:
+  backend:
+    driver: bridge
