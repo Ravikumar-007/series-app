@@ -1,4 +1,4 @@
-# Web-Series TMDB Ratings based on the Tv id and Series Id
+# Web-Series TMDB Ratings based on the Series Id and Season Id
 
 
 # How to Install the app ?
