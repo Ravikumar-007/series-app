@@ -39,7 +39,7 @@ describe('Should check the Controller with the method call topSeries Controller'
           'averageVotes': 8
         }]
     };
-    fetchServiceStub.withArgs(mockRequest.params.id, mockRequest.params.sid).resolves(responseObject);
+    fetchServiceStub.withArgs(mockRequest.params.id).resolves(responseObject);
     controller.getTopEpisodes(mockRequest, mockResponse);
     mockResponse.on('end', async () => {
       const response = await (mockResponse._getData());
@@ -54,7 +54,7 @@ describe('Should check the Controller with the method call topSeries Controller'
       },
     };
     const responseObject = {};
-    fetchServiceStub.withArgs(mockRequest.params.id, mockRequest.params.sid).resolves(responseObject);
+    fetchServiceStub.withArgs(mockRequest.params.id).resolves(responseObject);
     controller.getTopEpisodes(mockRequest, mockResponse);
     mockResponse.on('end', async () => {
       const response = await (mockResponse._getData());
@@ -74,7 +74,7 @@ describe('Should check the Controller with the method call topSeries Controller'
       'status_message': 'Invalid API key: You must be granted a valid key.',
       'success': false
     }
-    fetchServiceStub.withArgs(mockRequest.params.id, mockRequest.params.sid).rejects(mockErrorResponse);
+    fetchServiceStub.withArgs(mockRequest.params.id).rejects(mockErrorResponse);
     controller.getTopEpisodes(mockRequest, mockResponse);
     mockResponse.on('end', async () => {
       const response = await (mockResponse._getData());
