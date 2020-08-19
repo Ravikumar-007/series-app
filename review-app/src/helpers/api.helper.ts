@@ -1,8 +1,9 @@
 import axios, { AxiosResponse } from 'axios';
 import { baseUrl } from '../shared/constants';
 import secureKey from '../config/key.config';
+import { TVSeriesList, AllSeasonDescription } from 'src/interfaces/common.interface';
 
-export const fetchSeriesData = async (tvSeriesId: string): Promise<AxiosResponse> => {
+export const fetchSeriesData = async(tvSeriesId: string): Promise<TVSeriesList> => {
     try {
         // Using Axios library getting the tv-series data
         const fetchData: AxiosResponse = await axios.get(
@@ -18,7 +19,7 @@ export const fetchSeriesData = async (tvSeriesId: string): Promise<AxiosResponse
     }
 }
 
-export const fetchSeasonData = async (tvSeriesId:string, tvSeasonId: string): Promise<AxiosResponse> => {
+export const fetchSeasonData = async(tvSeriesId:string, tvSeasonId: string): Promise<AllSeasonDescription> => {
     try {
         const fetchData: AxiosResponse = await axios.get(
             `${baseUrl}tv/${tvSeriesId}/season/${tvSeasonId}`, {
