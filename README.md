@@ -18,15 +18,14 @@
 
 You can check the api and call the Api from postman
 
-http://localhost:3000/api/topEpisodes/{tvId}/{seasonId}
+http://localhost:3000/api/topEpisodes/{tvSeriesId}
   
-For example http://localhost:3000/api/topEpisodes/210/1
+For example http://localhost:3000/api/topEpisodes/210
   
-  '210' is the Tv Series Id and '1' is the season id
   
 # For Runnning  the unit test cases please follow the below commands(You can run the application through local also):
 
-1. npm i
+1. npm install
 
 2. npm run test  # this is for test case report
 
