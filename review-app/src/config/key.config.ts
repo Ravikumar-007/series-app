@@ -1,4 +1,4 @@
 // Security key for accessing the api
-const secureKey = 'b6a6280e022dccd7127069c12d853733';
+const secureKey = process.env.API_KEY;
 
 export default secureKey;
