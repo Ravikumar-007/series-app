@@ -5,7 +5,7 @@ import sinon from 'sinon';
 import * as service from '../../src/services/series.service';
 import * as helper from '../../src/helpers/api.helper';
 
-describe('Should check the Rated-Service with the method call fetchDetailsById', () => {
+describe('Should check the Series-Service with the method call fetchDetailsById', () => {
     let fetchSeriesDataStub: any;
     let fetchSeasonDataStub:any;
     beforeEach(() => {
@@ -17,9 +17,9 @@ describe('Should check the Rated-Service with the method call fetchDetailsById',
         fetchSeasonDataStub.restore();
     });
     const requestObj = {
-        id: '210',
-        sid: 1
+        id: '210'
     };
+    const seasonId = 1
     const seriesResponseObj = {
         status: 200,
         statusText: 'OK',
@@ -79,7 +79,7 @@ describe('Should check the Rated-Service with the method call fetchDetailsById',
     ]
     it('1. Should check fetch the series data with method fetchSeriesDetailsById ()', async () => {
         fetchSeriesDataStub.withArgs(requestObj.id).resolves(seriesResponseObj);
-        fetchSeasonDataStub.withArgs(requestObj.id, requestObj.sid).resolves(seasonResponseObj);
+        fetchSeasonDataStub.withArgs(requestObj.id, seasonId).resolves(seasonResponseObj);
         const serviceDetailsResponse = await service.fetchSeriesDetailsById(requestObj.id);
         expect(serviceDetailsResponse).to.be.deep.equal(returnedObj);
     });
@@ -141,7 +141,7 @@ describe('Should check the Rated-Service with the method call fetchDetailsById',
             ],
     };
         fetchSeriesDataStub.withArgs(requestObj.id).resolves(seriesResponseObj);
-        fetchSeasonDataStub.withArgs(requestObj.id, requestObj.sid).resolves(newSeasonResponse);
+        fetchSeasonDataStub.withArgs(requestObj.id, seasonId).resolves(newSeasonResponse);
         const serviceDetailsResponse = await service.fetchSeriesDetailsById(requestObj.id);
         expect(serviceDetailsResponse).to.be.deep.equal([]);
     });

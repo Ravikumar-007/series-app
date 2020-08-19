@@ -20,8 +20,7 @@ describe('Should check the Controller with the method call topSeries Controller'
   it('1. Should check the positive scenario with not empty response', () => {
     mockRequest = {
       params: {
-        id: '210',
-        sid: 1
+        id: '210'
       },
     };
     const responseObject = {
@@ -49,8 +48,7 @@ describe('Should check the Controller with the method call topSeries Controller'
   it('2. Should check the positive scenario with empty response', () => {
     mockRequest = {
       params: {
-        id: '210',
-        sid: 1
+        id: '210'
       },
     };
     const responseObject = {};
@@ -65,8 +63,7 @@ describe('Should check the Controller with the method call topSeries Controller'
   it('3. Should check the error scenario', () => {
     mockRequest = {
       params: {
-        id: '210',
-        sid: 1
+        id: '210'
       },
     };
     const mockErrorResponse = {
