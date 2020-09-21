@@ -4,17 +4,20 @@ import path from 'path';
 import helmet from 'helmet';
 
 import express, { Request, Response, NextFunction } from 'express';
+import bodyParser from 'body-parser';
 import { BAD_REQUEST } from 'http-status-codes';
 import 'express-async-errors';
 
 import BaseRouter from './routes';
 import logger from './shared/Logger';
 
+const redis = require("redis");
 
+const port_redis = Number(process.env.PORT || 6379);
 // Init express
 const app = express();
 
-
+const redis_client = redis.createClient();
 
 /************************************************************************************
  *                              Set basic express settings
