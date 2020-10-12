@@ -1,4 +1,4 @@
-# Web-Series TMDB Ratings based on the Series Id and Season Id
+# Fetch the Web-Series TMDB Ratings Using Node Js
 
 
 # How to Install the app ?
